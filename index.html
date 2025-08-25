@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Personalization Hub - Your Guide to Smart Customer Experiences</title>
+    
+    <!-- Google AdSense Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5739867765605477"
+     crossorigin="anonymous"></script>
+    
+    <!-- Google Analytics - Replace GA_TRACKING_ID with your actual ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_TRACKING_ID');
+    </script>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Complete guide to AI-powered personalization for businesses. Learn strategies, tools, and best practices to boost customer engagement and conversions.">
+    <meta name="keywords" content="AI personalization, customer experience, machine learning, personalization strategies, business growth, AI tools">
+    <meta name="author" content="Aran Jadhav - AI Personalization Hub">
+    <meta property="og:title" content="AI Personalization Hub - Your Guide to Smart Customer Experiences">
+    <meta property="og:description" content="Complete guide to AI-powered personalization for businesses. Learn strategies, tools, and best practices.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Contact Information Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "AI Personalization Hub",
+      "founder": {
+        "@type": "Person",
+        "name": "Aran Jadhav"
+      },
+      "email": "aranjadhav945@gmail.com",
+      "telephone": "+91-9284575711",
+      "url": "https://your-domain.com"
+    }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #0a0a0a;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* AdSense Ad Slots */
+        .ad-container {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            padding: 1rem;
+        }
+
+        .ad-slot {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px dashed #667eea;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        /* Blog/Content Section Styles */
+        .blog-section {
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .blog-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.2);
+        }
+
+        .blog-card h4 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-card p {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: #764ba2;
+        }
+
+        /* Newsletter styling for content site */
+        .newsletter h3 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: radial-gradient(ellipse at center, #1a1a2e 0%, #0a0a0a 70%);
+        }
+
+        #canvas-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, #667eea 50%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #ccc;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #fff;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #2a2a3e;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 3rem 0;
+            margin: 3rem 0;
+            border-radius: 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+        }
+
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            border: 1px solid #2a2a3e;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid #667eea;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured::before {
+            content: "Most Popular";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .price-period {
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .features-list li {
+            color: #ccc;
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .features-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Newsletter Form */
+        .newsletter {
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .newsletter h3 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter p {
+            color: #ccc;
+            margin-bottom: 2rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem;
+            border: 1px solid #2a2a3e;
+            border-radius: 50px;
+            background: #0a0a0a;
+            color: #fff;
+            font-size: 1rem;
+            min-width: 250px;
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0a0a0a;
+            padding: 3rem 0 2rem;
+            text-align: center;
+            border-top: 1px solid #2a2a3e;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #667eea;
+        }
+
+        .copyright {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .newsletter-form input {
+                min-width: auto;
+                width: 100%;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Loading Animation */
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Success Message */
+        .success-message {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .error-message {
+            background: linear-gradient(135deg, #f44336, #d32f2f);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">AI Personalization Hub</div>
+            <ul class="nav-links">
+                <li><a href="#guides">Guides</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#blog">Articles</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+            <a href="#newsletter" class="cta-btn">Get Updates</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div id="canvas-container"></div>
+        <div class="hero-content">
+            <h1>Master AI-Powered Personalization for Your Business</h1>
+            <p>Comprehensive guides, tools, and strategies to implement intelligent personalization that boosts conversions by 35%. Learn from industry experts and real case studies.</p>
+            <div class="hero-buttons">
+                <a href="#guides" class="cta-btn">Explore Guides</a>
+                <a href="#tools" class="btn-secondary">View Tools</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AdSense Ad - Top Banner -->
+    <div class="ad-container">
+        <div class="ad-slot" style="width: 728px; height: 90px;">
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:728px;height:90px"
+                 data-ad-client="ca-pub-5739867765605477"
+                 data-ad-slot="1234567890"></ins>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <section class="section">
+        <div class="stats">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>$639B</h3>
+                    <p>AI Market Size by 2029</p>
+                </div>
+                <div class="stat-item">
+                    <h3>35%</h3>
+                    <p>Average Conversion Boost</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1000+</h3>
+                    <p>Success Stories</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Expert Guides</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guides Section -->
+    <section class="section" id="guides">
+        <h2>Complete AI Personalization Guides</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📖</div>
+                <h3>Getting Started with AI Personalization</h3>
+                <p>Step-by-step guide to implementing your first AI personalization system. Perfect for beginners and small businesses.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛠️</div>
+                <h3>Advanced Implementation Strategies</h3>
+                <p>Deep dive into complex personalization algorithms, A/B testing frameworks, and enterprise-level deployments.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Measuring Personalization Success</h3>
+                <p>Learn how to track ROI, conversion improvements, and user engagement metrics from your personalization efforts.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Industry-Specific Use Cases</h3>
+                <p>Detailed case studies and implementation guides for e-commerce, content platforms, education, and healthcare.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔐</div>
+                <h3>Privacy & Compliance Guide</h3>
+                <p>Navigate GDPR, CCPA, and other privacy regulations while implementing effective personalization strategies.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Future of AI Personalization</h3>
+                <p>Emerging trends, new technologies, and predictions for the next generation of personalization systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AdSense Ad - Square -->
+    <div class="ad-container">
+        <div class="ad-slot" style="width: 336px; height: 280px;">
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:336px;height:280px"
+                 data-ad-client="ca-pub-5739867765605477"
+                 data-ad-slot="1234567891"></ins>
+        </div>
+    </div>
+
+    <!-- Blog/Articles Section -->
+    <section class="section" id="blog">
+        <div class="blog-section">
+            <h2>Latest Articles & Insights</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <h4>10 AI Personalization Tools Every Marketer Should Know</h4>
+                    <p>Discover the most powerful AI personalization platforms available today, including pricing, features, and real-world performance comparisons...</p>
+                    <a href="#" class="read-more">Read Full Article →</a>
+                </div>
+                <div class="blog-card">
+                    <h4>Case Study: How Netflix Uses AI for Content Recommendations</h4>
+                    <p>Deep dive into Netflix's recommendation algorithm, including the technical architecture and business impact of their personalization strategy...</p>
+                    <a href="#" class="read-more">Read Full Article →</a>
+                </div>
+                <div class="blog-card">
+                    <h4>Building Your First Recommendation Engine in 2025</h4>
+                    <p>Complete technical tutorial with code examples, from data collection to deployment. Includes Python implementations and cloud setup guides...</p>
+                    <a href="#" class="read-more">Read Full Article →</a>
+                </div>
+                <div class="blog-card">
+                    <h4>AI Personalization ROI: Real Numbers from 50+ Companies</h4>
+                    <p>Comprehensive analysis of ROI data from companies using AI personalization, including conversion improvements and revenue increases...</p>
+                    <a href="#" class="read-more">Read Full Article →</a>
+                </div>
+                <div class="blog-card">
+                    <h4>Privacy-First Personalization: Best Practices Guide</h4>
+                    <p>How to implement effective personalization while respecting user privacy. Includes GDPR compliance strategies and technical implementations...</p>
+                    <a href="#" class="read-more">Read Full Article →</a>
+                </div>
+                <div class="blog-card">
+                    <h4>The Future of AI in Customer Experience</h4>
+                    <p>Expert predictions and emerging trends in AI-powered customer experiences. What to expect in the next 5 years and how to prepare...</p>
+                    <a href="#" class="read-more">Read Full Article →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools & Resources Section -->
+    <section class="section" id="tools">
+        <h2>AI Personalization Tools & Resources</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Free Tools</h3>
+                <div class="price">$0<span class="price-period">/forever</span></div>
+                <ul class="features-list">
+                    <li>ROI Calculator for AI Personalization</li>
+                    <li>Personalization Strategy Templates</li>
+                    <li>A/B Testing Checklists</li>
+                    <li>Privacy Compliance Guides</li>
+                    <li>Implementation Roadmaps</li>
+                </ul>
+                <a href="#newsletter" class="cta-btn">Get Free Tools</a>
+            </div>
+            <div class="pricing-card featured">
+                <h3>Premium Guides</h3>
+                <div class="price">$97<span class="price-period">/one-time</span></div>
+                <ul class="features-list">
+                    <li>Complete Implementation Course</li>
+                    <li>50+ Industry Case Studies</li>
+                    <li>Code Templates & Examples</li>
+                    <li>1-on-1 Strategy Session</li>
+                    <li>Private Community Access</li>
+                    <li>Lifetime Updates</li>
+                </ul>
+                <a href="#contact" class="cta-btn">Get Premium Access</a>
+            </div>
+            <div class="pricing-card">
+                <h3>Consulting</h3>
+                <div class="price">$297<span class="price-period">/hour</span></div>
+                <ul class="features-list">
+                    <li>Custom Implementation Strategy</li>
+                    <li>Technical Architecture Review</li>
+                    <li>Team Training & Workshops</li>
+                    <li>Performance Optimization</li>
+                    <li>Ongoing Support & Guidance</li>
+                    <li>Success Guarantee</li>
+                </ul>
+                <a href="#contact" class="cta-btn">Book Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AdSense Ad - Large Rectangle -->
+    <div class="ad-container">
+        <div class="ad-slot" style="width: 300px; height: 250px;">
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:300px;height:250px"
+                 data-ad-client="ca-pub-5739867765605477"
+                 data-ad-slot="1234567892"></ins>
+        </div>
+    </div>
+
+    <!-- Newsletter/Email Collection Section -->
+    <section class="section" id="newsletter">
+        <div class="newsletter">
+            <h3>Get Expert AI Personalization Insights</h3>
+            <p>Join 10,000+ marketers and developers who receive weekly updates on AI personalization strategies, tools, and case studies. Plus get instant access to our free toolkit.</p>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" placeholder="Enter your email for free resources" required id="emailInput">
+                <button type="submit" class="cta-btn">Get Free Resources</button>
+            </form>
+            <div class="success-message" id="successMessage">
+                🎉 Success! Check your email for the free AI personalization toolkit and weekly insights.
+            </div>
+            <div class="error-message" id="errorMessage">
+                ❌ Please enter a valid email address.
+            </div>
+            <p style="font-size: 0.9rem; color: #999; margin-top: 1rem;">
+                Free resources include: ROI Calculator, Strategy Templates, Implementation Checklists, and Case Study Database
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="mailto:aranjadhav945@gmail.com">Contact</a>
+                <a href="#sitemap">Sitemap</a>
+                <a href="#about">About</a>
+                <a href="#disclaimer">Disclaimer</a>
+            </div>
+            <p class="copyright">&copy; 2025 AI Personalization Hub by Aran Jadhav. All rights reserved. Contact: aranjadhav945@gmail.com | +91-9284575711</p>
+        </div>
+    </footer>
+
+    <script>
+        // Three.js Background Animation
+        let scene, camera, renderer, particles;
+
+        function initThreeJS() {
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+            // Create particles
+            const geometry = new THREE.BufferGeometry();
+            const vertices = [];
+            const colors = [];
+
+            for (let i = 0; i < 1000; i++) {
+                vertices.push(
+                    Math.random() * 2000 - 1000,
+                    Math.random() * 2000 - 1000,
+                    Math.random() * 2000 - 1000
+                );
+
+                colors.push(
+                    Math.random() * 0.5 + 0.5,
+                    Math.random() * 0.5 + 0.5,
+                    1
+                );
+            }
+
+            geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+            geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+
+            const material = new THREE.PointsMaterial({
+                size: 2,
+                vertexColors: true,
+                transparent: true,
+                opacity: 0.6
+            });
+
+            particles = new THREE.Points(geometry, material);
+            scene.add(particles);
+
+            camera.position.z = 1000;
+        }
+
+        function animateThreeJS() {
+            requestAnimationFrame(animateThreeJS);
+            
+            particles.rotation.x += 0.001;
+            particles.rotation.y += 0.002;
+            
+            renderer.render(scene, camera);
+        }
+
+        // Initialize Three.js
+        initThreeJS();
+        animateThreeJS();
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                header.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
+
+        // Newsletter form handling
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('emailInput').value;
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // Hide previous messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+            
+            // Basic email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (emailRegex.test(email)) {
+                // Store email in memory (since we can't use localStorage)
+                window.subscriberEmails = window.subscriberEmails || [];
+                window.subscriberEmails.push({
+                    email: email,
+                    timestamp: new Date().toISOString(),
+                    source: 'newsletter_signup'
+                });
+                
+                // Show success message
+                successMessage.style.display = 'block';
+                document.getElementById('emailInput').value = '';
+                
+                // Track conversion for analytics
+                trackEvent('newsletter_signup', {
+                    email_domain: email.split('@')[1]
+                });
+                
+                // In a real implementation, you would send this to your backend/email service
+                console.log('New newsletter signup:', email);
+                
+            } else {
+                errorMessage.style.display = 'block';
+            }
+        });
+
+        // Initialize AdSense ads
+        function initializeAds() {
+            try {
+                // Push all ad units
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                
+                console.log('AdSense ads initialized successfully');
+            } catch (error) {
+                console.log('AdSense not yet loaded:', error);
+            }
+        }
+
+        // Load ads after page is ready
+        window.addEventListener('load', () => {
+            setTimeout(initializeAds, 2000);
+        });
+
+        // Email collection with backend integration
+        function sendEmailToBackend(email) {
+            // You can integrate with services like:
+            // 1. Mailchimp API
+            // 2. ConvertKit API  
+            // 3. EmailJS (free option)
+            // 4. Your own backend server
+            
+            // Example with EmailJS (free service):
+            /*
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+                to_email: 'aranjadhav945@gmail.com',
+                subscriber_email: email,
+                message: 'New subscriber from AI Personalization Hub'
+            });
+            */
+            
+            console.log(`New subscriber: ${email} - should be sent to aranjadhav945@gmail.com`);
+        }
+
+        // Feature card hover effects
+        document.querySelectorAll('.feature-card, .pricing-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                if (!this.classList.contains('featured')) {
+                    this.style.transform = 'translateY(0) scale(1)';
+                } else {
+                    this.style.transform = 'scale(1.05)';
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animation
+        document.querySelectorAll('.feature-card, .pricing-card, .stats').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Typing effect for hero title (simple version)
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize typing effect when page loads
+        window.addEventListener('load', () => {
+            const heroTitle = document.querySelector('.hero h1');
+            const originalText = heroTitle.textContent;
+            typeWriter(heroTitle, originalText, 50);
+        });
+
+        // Analytics tracking (placeholder)
+        function trackEvent(eventName, data = {}) {
+            console.log(`Analytics Event: ${eventName}`, data);
+            // In a real implementation, you would send this to your analytics service
+        }
+
+        // Track button clicks
+        document.querySelectorAll('.cta-btn, .btn-secondary').forEach(button => {
+            button.addEventListener('click', function() {
+                trackEvent('button_click', {
+                    button_text: this.textContent,
+                    button_location: this.closest('section')?.id || 'unknown'
+                });
+            });
+        });
+
+        // Track scroll depth
+        let maxScrollDepth = 0;
+        window.addEventListener('scroll', () => {
+            const scrollDepth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+            if (scrollDepth > maxScrollDepth) {
+                maxScrollDepth = scrollDepth;
+                if (maxScrollDepth % 25 === 0) { // Track at 25%, 50%, 75%, 100%
+                    trackEvent('scroll_depth', { depth: maxScrollDepth });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
